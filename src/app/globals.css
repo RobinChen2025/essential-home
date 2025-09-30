@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F2F2F2;
+  --essential-white: #FFFFFF;
+  --essential-grey: #F2F2F2;
+  --essential-black: #1C1C1C;
+  --essential-grey-dark: #E6E6E6;
+  --essential-grey-darker: #C3C3C3;
+  --border-lighter: #E3E3E3;
+}
+
+@theme inline {
+  --color-essential-white: var(--essential-white);
+  --color-essential-grey: var(--essential-grey);
+  --color-essential-grey-dark: var(--essential-grey-dark);
+  --color-essential-grey-darker: var(--essential-grey-darker);
+  --color-essential-black: var(--essential-black);
+
+  --color-border-lighter: var(--border-lighter);
+
+  --color-yellow: #FFC700;
+  --color-red: #C8102E;
+
+
+  --font-ndot: var(--font-ndot);
+  --font-ntype82: var(--font-ntype82);
+  --font-mono: var(--font-geist-mono);
+
+  --text-date-md: 100px;
+  --text-date: 70px;
+
+  --text-headline-md: clamp(38px, 5.5vw, 60px);
+  --text-headline: clamp(26px, 10vw, 40px);
+
+  --text-title: 24px;
+  --text-button: 14px;
+  --text-label: 9px;
+}
+
+body {
+  background: var(--essential-grey);
+  color: var(--essential-black);
+  font-family: var(--font-geist-mono), Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .trim-text {
+    text-box-edge: cap alphabetic;
+    text-box-trim: trim-both;
+  }
+}
