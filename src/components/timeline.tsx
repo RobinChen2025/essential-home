@@ -19,7 +19,7 @@ export default function Timeline() {
   const [hasReachedFirstThreshold, setHasReachedFirstThreshold] =
     useState(false);
   const [closestDistance, setClosestDistance] = useState<number>(
-    Number.POSITIVE_INFINITY,
+    Number.POSITIVE_INFINITY
   );
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -86,7 +86,7 @@ export default function Timeline() {
       ref={containerRef}
       className={cn(
         "relative mt-20 flex min-h-[100svh] w-full max-w-7xl flex-col items-start justify-center px-6 py-12 md:px-12",
-        "mb-56 pb-24 md:mb-20 md:pb-0",
+        "mb-56 pb-24 md:mb-20 md:pb-0"
       )}
     >
       <motion.nav className="flex w-full flex-col items-center justify-center gap-12.5 overflow-visible pb-20 md:items-start md:justify-start">
@@ -136,7 +136,7 @@ const NavButton = forwardRef<
       type="button"
       className={cn(
         "cursor-pointer transition-colors duration-200",
-        active ? "text-essential-black" : "text-essential-grey-darker",
+        active ? "text-essential-black" : "text-essential-grey-darker"
       )}
       onClick={onClick}
     >
@@ -179,7 +179,7 @@ function Milestone({
             alt={event.title}
             width={150}
             height={150}
-            className="aspect-square h-full max-h-18 w-auto object-contain md:max-h-38"
+            className="aspect-square h-full max-h-18 w-auto rounded-3xl object-contain md:max-h-38"
           />
         </motion.div>
         <p className="trim-text flex flex-col items-center justify-center self-stretch text-essential-black">
@@ -240,6 +240,6 @@ const EVENTS = [
     title: "Essential OS",
     image: "/roadmap/essential-os.webp",
     description: "The future of personal computing with AI at its core.",
-    timestamp: "H1 2027",
+    timestamp: "H1 2028",
   },
 ];
