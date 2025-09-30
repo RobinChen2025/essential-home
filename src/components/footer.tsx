@@ -53,13 +53,13 @@ export default function Footer() {
 
             <div className="flex flex-col items-center justify-center gap-6">
               <h3 className="trim-text text-center font-ntype82 text-title leading-6">
-                Come to play.
+                Come to play with Essential.
                 <br />
-                Your digital canvas awaits.
+                Your digital Playground awaits.
               </h3>
               <p className="trim-text max-w-sm text-center text-balanace">
-                Join thousands of our creators today to build something truly
-                inspiring and uniquely yours for the Nothing community.
+                Join thousands of creators to build something uniquely yours,
+                and discover the creativity of the Nothing Community.
               </p>
             </div>
 
@@ -70,7 +70,7 @@ export default function Footer() {
                 target="_blank"
                 className={cn(
                   "flex cursor-pointer items-center justify-center gap-3 rounded-full p-4 transition-colors",
-                  "relative bg-yellow text-essential-black",
+                  "relative bg-yellow text-essential-black"
                 )}
               >
                 <span className="trim-text px-1">Playground</span>
@@ -108,7 +108,7 @@ function Links({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
     <div
       className={cn(
         "flex w-full items-center justify-center gap-2 md:w-auto",
-        className,
+        className
       )}
       {...props}
     >
