@@ -231,14 +231,14 @@ const EVENTS = [
 
   {
     title: "AI-Native Devices",
-    image: "/roadmap/ai-native.webp",
+    image: "/roadmap/ai-native0930.webp",
     description:
       "Pairing software experiences with new use case specific shaped devices.",
     timestamp: "H2 2026",
   },
   {
     title: "Essential OS",
-    image: "/roadmap/essential-os.webp",
+    image: "/roadmap/essential-os0930.webp",
     description: "The future of personal computing with AI at its core.",
     timestamp: "H1 2028",
   },
