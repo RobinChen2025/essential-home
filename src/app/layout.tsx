@@ -1,14 +1,13 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Favicon from "@/components/favicon";
 import { cn } from "@/lib/utils";
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: "../../public/fonts/geistmono.ttf",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 const ntype82 = localFont({
