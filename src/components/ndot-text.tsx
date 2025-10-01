@@ -28,7 +28,7 @@ function cleanupCache() {
 
 function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
-  wait: number,
+  wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout;
   return (...args: Parameters<T>) => {
@@ -108,14 +108,14 @@ export default function NdotText({
       }
       return "";
     },
-    [viewportWidth],
+    [viewportWidth]
   );
 
   const text = useMemo(() => extractText(children), [children, extractText]);
 
   const debouncedUpdateViewportWidth = useMemo(
     () => debounce(() => setViewportWidth(window.innerWidth), 100),
-    [],
+    []
   );
 
   const debouncedUpdateMeasurements = useMemo(
@@ -134,7 +134,7 @@ export default function NdotText({
         setBox({ w: Math.max(1, w), h: Math.max(1, totalHeight) });
         setContainerWidth(c.clientWidth || 0);
       }, 100),
-    [],
+    []
   );
 
   useEffect(() => {
@@ -495,13 +495,13 @@ export default function NdotText({
       hidden: { opacity: 0.8, scale: decorative ? 0 : 1 },
       show: { opacity: 1, scale: decorative ? 1 : 1 },
     }),
-    [decorative],
+    [decorative]
   );
 
   // Memoized transition config
   const transition = useMemo(
     () => ({ duration: 0.15, ease: "easeOut" as const }),
-    [],
+    []
   );
 
   // Compute font size for real text in decorative mode to match SVG scaled width
@@ -525,7 +525,7 @@ export default function NdotText({
           className={cn(
             className,
             "trim-text whitespace-pre font-ndot leading-[1.3em]",
-            decorative && "pointer-events-none absolute top-0 left-0 opacity-0",
+            decorative && "pointer-events-none absolute top-0 left-0 opacity-0"
           )}
           style={{
             color: "transparent",
@@ -541,18 +541,15 @@ export default function NdotText({
   return (
     <span
       ref={containerRef}
-      className={cn("relative flex", decorative && "w-full")}
+      className={cn("relative flex  pb-2.5", decorative && "w-full")}
     >
       <span
         ref={wrapRef}
         className={cn(
           className,
-          "trim-text whitespace-pre font-ndot leading-[1.3em]",
-          decorative && "pointer-events-none absolute top-0 left-0 opacity-0",
+          "trim-text whitespace-pre font-ndot leading-[1.3em] text-transparent!",
+          decorative && "pointer-events-none absolute top-0 left-0 opacity-0"
         )}
-        style={{
-          color: "transparent",
-        }}
         aria-hidden={decorative}
       >
         {text.toUpperCase()}
@@ -561,7 +558,7 @@ export default function NdotText({
         <span
           className={cn(
             className,
-            "trim-text absolute top-0 left-0 whitespace-pre font-ndot text-transparent leading-[1.3em]",
+            "trim-text absolute top-0 left-0 whitespace-pre font-ndot text-transparent leading-[1.3em]"
           )}
           style={{
             fontSize: decorativeRealTextFontSize,
@@ -580,9 +577,7 @@ export default function NdotText({
           variants={svgV}
           className={cn(
             "pointer-events-none",
-            decorative
-              ? "h-auto w-full"
-              : "absolute top-0 left-0 h-full w-full",
+            decorative ? "h-auto w-full" : "absolute top-0 left-0 h-full w-full"
           )}
           aria-hidden={decorative ? true : undefined}
           role={!decorative && text.trim().length > 0 ? "img" : undefined}
